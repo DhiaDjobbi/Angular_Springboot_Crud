@@ -1,0 +1,52 @@
+<div class="container">
+    <div>
+      <h2>Modifier une Facture :</h2>
+    </div>
+    <form>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>ID Facture</label>
+        <input
+          type="text"
+          [(ngModel)]="currentFacture.idFacture"
+          name="idFacture"
+          class="form-control"
+          readonly
+        />
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Nom Societe</label>
+        <input
+          type="text"
+          [(ngModel)]="currentFacture.nomSociete"
+          name="nomSociete"
+          class="form-control"
+        />
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Prix Facture</label>
+        <input
+          type="number"
+          [(ngModel)]="currentFacture.montant"
+          name="montant"
+          class="form-control"
+        />
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4"> 
+        <label>Date Expiration</label>
+        <input
+          type="date"
+          [ngModel]="currentFacture.dateExpiration | date: 'yyyy-MM-dd'"
+          (ngModelChange)=" currentFacture.dateExpiration= $event"
+          name="dateExpiration"
+          class="form-control"
+        />
+      </div>
+      <div class="mt-2">
+        <button type="submit" (click)="updateFacture()" class="btn btn-success">
+          Modifier
+        </button>
+      </div>
+      
+    </form>
+  </div>
+  

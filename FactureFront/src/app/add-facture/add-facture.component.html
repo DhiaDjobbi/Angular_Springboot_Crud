@@ -1,0 +1,42 @@
+<div class="container">
+    <div>
+      <h2>Ajouter un Facture :</h2>
+    </div>
+    <form>
+
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Nom Societe</label>
+        <input
+          type="text"
+          [(ngModel)]="newFacture.nomSociete"
+          name="nomSociete"
+          class="form-control"
+        />
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Prix Facture</label>
+        <input
+          type="number"
+          [(ngModel)]="newFacture.montant"
+          name="montant"
+          class="form-control"
+        />
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Date Expiration</label>
+        <input
+          type="date"
+          [(ngModel)]="newFacture.dateExpiration"
+          name="dateExpiration"
+          class="form-control"
+        />
+      </div>
+      <div class="mt-2">
+        <button type="submit" (click)="addFacture()" class="btn btn-success">
+          Ajouter
+        </button>
+      </div>
+      
+    </form>
+  </div>
+  

@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Montant</th>
+                    <th>Date Expiration</th>
+                    <th>Actions</th>
+                </tr>
+                <tbody *ngFor="let fact of factures" >
+                    <tr>
+                        <td>{{fact.idFacture}}</td>
+                        <td>{{fact.nomSociete}}</td>
+                        <td>{{fact.montant}}</td>
+                        <td>{{fact.dateExpiration | date:'dd/MM/yyyy'}}</td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateFacture',fact.idFacture]">Modifier</a></td>
+                        <td><a class="btn btn-danger" (click)="supprimerFacture(fact)">Supprimer</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
